@@ -1,0 +1,15 @@
+#!/bin/sh
+
+swaylock \
+        --screenshots \
+        --clock \
+        --indicator \
+        --indicator-radius 100 \
+        --indicator-thickness 7 \
+        --effect-blur 10x10 \
+        --ring-color ffe97b \
+        --key-hl-color 880033 \
+        --line-color 00000000 \
+        --inside-color 00000000 \
+        --separator-color 00000000 \
+        --fade-in 0.2  --font "Liberation Sans"

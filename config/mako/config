@@ -1,0 +1,6 @@
+font=Liberation Mono 11
+
+background-color=#161616FF
+border-color=#FFE97BFF
+
+default-timeout=10000
