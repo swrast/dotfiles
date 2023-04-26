@@ -6,13 +6,14 @@
 - sway{,lock,bg,idle}
 - waybar
 - foot
-- pipewire (pipewire-pulse, wireplumber)
+- pulseaudio
 - polkit-gnome
 - mako
-- ttf-liberation
+- ttf-cascadia-code
 - fuzzel
 - thunar
-- plata-gtk-theme
+- materia-gtk-theme
 - papirus-icon-theme
 - grimshot
 - wlsunset, brightnessctl
+- playerctl
