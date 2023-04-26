@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Liberation Mono", "Symbols Nerd Font";
+    font-family: "Cascadia Code", "Liberation Mono", "Symbols Nerd Font";
     font-size: 14px;
 }
 
@@ -10,6 +10,8 @@ window#waybar {
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
+
+
 }
 
 window#waybar.hidden {
@@ -24,11 +26,13 @@ window>box {
     padding: 8px;
 
     border-radius: 5px;*/
-    /* 
-    margin: 5px;
-    padding: 5px;
 
-    box-shadow: 0 0 1px 1px #fff; */
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 7px;
+
+    box-shadow: 0 0 2px 2px #222222;
 }
 
 /*

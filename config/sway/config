@@ -3,11 +3,11 @@ output HDMI-A-1 position 0 0 mode 1920x1080@75Hz
 
 focus_follows_mouse no
 
-exec_always xrandr --output $(xrandr | grep -m 1 XWAYLAND | awk '{print $1;}') --primary
+exec_always xrandr --output HDMI-A-1 --auto --left-of eDP-1
 exec foot -s
 exec ~/.config/sway/battery
 
-client.focused #ffe97b #ffe97b #a6a6a6 #ffe97b
+client.focused #2c4a61 #2c4a61 #a6a6a6 #2c4a61
 client.focused_inactive #222222 #222222 #dddddd #222222
 client.unfocused #222222 #222222 #dddddd #222222
 
@@ -29,13 +29,13 @@ workspace 10 output eDP-1
 # default_border none
 default_border pixel 2
 default_floating_border pixel 2
-# gaps inner 5
+gaps inner 5
 
 exec waybar
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 # exec /usr/lib/polkit-mate/polkit-mate-authentication-agent-1
 exec wlsunset -l 55.7 -L 49.1
-# exec swaymsg -t SUBSCRIBE -m "['workspace']" | jq --unbuffered -r 'select(.change == "focus") | .current.output' | xargs -L1 swaymsg input type:tablet_tool map_to_output
+exec swaymsg -t SUBSCRIBE -m "['workspace']" | jq --unbuffered -r 'select(.change == "focus") | .current.output' | xargs -L1 swaymsg input type:tablet_tool map_to_output
 
 # set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 # exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
@@ -57,9 +57,9 @@ exec swayidle -w \
 
 set $mod Mod4
 # set $term ps -C alacritty >/dev/null && alacritty msg create-window || alacritty
-set $term foot
+set $term footclient
 # set $menu fuzzel -T "alacritty -e" --icon-theme=Papirus-Dark -f "SF Pro:size=20" -w 15 -r 5 -D no
-set $menu fuzzel
+set $menu rofi -show drun
 
 output * bg ~/pictures/wall.png fill
 
@@ -78,6 +78,10 @@ bindsym --to-code {
     Print exec grimshot copy output && wl-paste > ~/pictures/screenshots/screenshot-$(date +"%m.%d.%y-%H:%M:%S").png
     $mod+Print exec grimshot copy area && wl-paste > ~/pictures/screenshots/screenshot-$(date +"%m.%d.%y-%H:%M:%S").png
     $mod+Ctrl+Print exec grimshot copy screen && wl-paste > ~/pictures/screenshots/screenshot-$(date +"%m.%d.%y-%H:%M:%S").png
+
+    $mod+F10 exec playerctl play-pause
+    $mod+F11 exec playerctl previous
+    $mod+F12 exec playerctl next
 
     $mod+Return exec $term
     $mod+w kill
