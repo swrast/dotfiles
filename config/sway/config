@@ -1,9 +1,9 @@
 output eDP-1 position 1920 0
-output HDMI-A-1 position 0 0 mode 1920x1080@75Hz
+output HDMI-A-1 position 0 0 mode 1920x1080@60Hz
 
 focus_follows_mouse no
 
-exec_always xrandr --output HDMI-A-1 --auto --left-of eDP-1
+exec_always xrandr --output XWAYLAND2 --auto --left-of XWAYLAND0
 exec foot -s
 exec ~/.config/sway/battery
 
@@ -32,8 +32,8 @@ default_floating_border pixel 2
 gaps inner 5
 
 exec waybar
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
-# exec /usr/lib/polkit-mate/polkit-mate-authentication-agent-1
+exec  /nix/store/*polkit-gnome*/libexec/polkit-gnome-authentication-agent-1
+exec thunar --daemon
 exec wlsunset -l 55.7 -L 49.1
 exec swaymsg -t SUBSCRIBE -m "['workspace']" | jq --unbuffered -r 'select(.change == "focus") | .current.output' | xargs -L1 swaymsg input type:tablet_tool map_to_output
 
