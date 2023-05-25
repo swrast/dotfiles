@@ -7,9 +7,11 @@ swaylock \
         --indicator-radius 100 \
         --indicator-thickness 7 \
         --effect-blur 10x10 \
-        --ring-color ffe97b \
-        --key-hl-color 880033 \
+        --ring-color 2c4a61 \
+        --key-hl-color a6a6a6 \
         --line-color 00000000 \
         --inside-color 00000000 \
+        --text-color ffffff \
         --separator-color 00000000 \
-        --font "Liberation Sans"
+        --font "Fira Sans 12" \
+        --fade-in 0.2

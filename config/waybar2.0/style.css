@@ -1,0 +1,23 @@
+* {
+    font-family: "Fira Sans", "Symbols Nerd Font";
+    font-size: 16px;
+}
+
+window>box  {
+    margin-right: 5px;
+}
+
+window#waybar {
+    background-color: #151515;
+}
+
+#workspaces button {
+    padding: 0 2px;
+    
+    border-radius: 0px;
+}
+
+#workspaces button.focused {
+    background-color: #285577;
+    border-color: #4c7899;
+}
