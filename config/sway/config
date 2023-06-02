@@ -1,12 +1,19 @@
 set $locker ~/.config/sway/lock
 set $mod Mod4
-# set $term ps -C alacritty >/dev/null && alacritty msg create-window || alacritty
-set $term footclient
-set $menu rofi -show drun
+set $term ps -C alacritty >/dev/null && alacritty msg create-window || alacritty
+# set $term footclient
+set $menu wofi --show drun
 set $wf ~/.config/sway/wf
 set $waybar ~/.config/sway/wb
 
-exec $waybar
+gaps inner 4
+
+output eDP-1 position 1920 0
+output HDMI-A-1 position 0 0 mode 1920x1080@60Hz
+
+#exec kanshi
+#exec_always pkill kanshi; exec kanshi
+# exec $waybar
 exec foot -s
 exec thunar --daemon
 exec wlsunset -l 55.7 -L 49.1
@@ -15,9 +22,6 @@ exec ~/.config/sway/battery
 exec swayidle -w \
 	before-sleep "$locker"
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-output eDP-1 position 1920 0
-output HDMI-A-1 position 0 0 mode 1920x1080@60Hz
 
 output * bg ~/pictures/wall.png fill
 
@@ -42,6 +46,7 @@ workspace 8 output eDP-1
 workspace 9 output eDP-1
 workspace 10 output eDP-1
 
+for_window [app_id=".*"] border pixel 2
 default_border pixel 2
 default_floating_border pixel 2
 

@@ -1,0 +1,4 @@
+allow_images = true
+no_actions = true
+term = alacritty
+image_size=20

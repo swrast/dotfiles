@@ -1,0 +1,12 @@
+profile {
+    output eDP-1 mode 1920x1080@60 position 0,0
+
+    exec xrandr --output eDP-1 --pos 0x0
+}
+
+profile {
+    output HDMI-A-1 mode 1920x1080@60 position 0,0
+    output eDP-1 mode 1920x1080@60 position 1920,0
+    
+    exec xrandr --output HDMI-A-1 --auto --left-of eDP-1
+}

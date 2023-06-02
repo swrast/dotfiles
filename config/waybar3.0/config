@@ -1,0 +1,26 @@
+{
+    "height": 36,
+    "spacing": 5,
+    "modules-left": [
+        "sway/workspaces"
+    ],
+    "modules-center": [
+        "custom/wf"
+    ],
+    "modules-right": [
+        "custom/media",
+        "tray",
+        "pulseaudio",
+        "network",
+        "backlight",
+        "sway/language",
+        "battery",
+        "clock"
+    ],
+    "custom/wf": {
+        "exec": "pgrep wf-recorder",
+        "interval": "once",
+        "signal": 8,
+        "format": "recording"
+    }
+}

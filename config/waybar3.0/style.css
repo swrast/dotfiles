@@ -1,0 +1,54 @@
+* {
+    font-family: "Fira Sans", "Symbols Nerd Font";
+    font-size: 16px;
+
+	color: #ffffff;
+}
+
+#workspaces,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#language,
+#mpd {
+    background-color: #121212;
+	border-radius: 10px;
+
+	margin: 4px;
+	padding: 4px;
+}
+
+window>box  {
+    margin-right: 5px;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0);
+}
+
+#workspaces button {
+    padding: 0 6px;
+
+	min-width: 0;
+
+	background-color: transparent;
+    
+    border-radius: 0px;
+}
+
+
+#workspaces button.focused {
+	box-shadow: 0 3px #ffffff;
+}
