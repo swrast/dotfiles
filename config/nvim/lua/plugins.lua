@@ -7,12 +7,15 @@ return require("packer").startup(function(use)
 	    requires = { "nvim-tree/nvim-web-devicons", opt = true }
     }
 	use "nanotech/jellybeans.vim"
-	use {
-		"neoclide/coc.nvim",
-		branch = "release"
-	}
 	use "preservim/nerdtree"
 	use "nvim-tree/nvim-web-devicons"
 	use "romgrk/barbar.nvim"
+    use "onsails/lspkind-nvim"
+    
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/nvim-cmp"
+
+    use "neovim/nvim-lspconfig"
 end)
 

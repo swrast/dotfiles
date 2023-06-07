@@ -1,19 +1,19 @@
 set $locker ~/.config/sway/lock
 set $mod Mod4
 set $term ps -C alacritty >/dev/null && alacritty msg create-window || alacritty
-# set $term footclient
+# set $term kitty
 set $menu wofi --show drun
 set $wf ~/.config/sway/wf
 set $waybar ~/.config/sway/wb
 
-gaps inner 4
+# gaps inner 4
 
 output eDP-1 position 1920 0
 output HDMI-A-1 position 0 0 mode 1920x1080@60Hz
 
 #exec kanshi
 #exec_always pkill kanshi; exec kanshi
-# exec $waybar
+exec waybar
 exec foot -s
 exec thunar --daemon
 exec wlsunset -l 55.7 -L 49.1

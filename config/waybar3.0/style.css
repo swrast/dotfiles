@@ -6,6 +6,7 @@
 }
 
 #workspaces,
+#custom-wf,
 #clock,
 #battery,
 #cpu,
@@ -24,18 +25,18 @@
 #language,
 #mpd {
     background-color: #121212;
-	border-radius: 10px;
+	border-radius: 12px;
 
-	margin: 4px;
-	padding: 4px;
+	/* margin-top: 4px; */
+	padding: 6px;
 }
 
 window>box  {
-    margin-right: 5px;
+    /* margin: 0 5px; */
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0);
+    background-color: #121212;
 }
 
 #workspaces button {
