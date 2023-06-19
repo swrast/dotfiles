@@ -1,0 +1,22 @@
+#!/bin/sh
+
+warn_path=/tmp/battery_warn_status
+echo 0 > $warn_path
+
+while true; do
+	capacity=$(</sys/class/power_supply/BAT0/capacity)
+	_status=$(</sys/class/power_supply/BAT0/status)
+	warned=$(<$warn_path)
+	
+	if [[ "$_status" == "Discharging" ]] && [[ "$warned" == "0" ]] && (( capacity < 20 )); then
+		notify-send --urgency=critical "Батарея разряжена" "Заряд батареи - ${capacity}%. Подключите зарядное устройство"
+
+		echo 1 > $warn_path
+	fi
+
+	if [[ "$_status" == "Charging" ]] && [[ "$warned" == "1" ]]; then
+		echo 0 > $warn_path
+	fi
+
+	sleep 120
+done

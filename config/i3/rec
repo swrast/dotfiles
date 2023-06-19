@@ -1,0 +1,17 @@
+#!/bin/sh
+
+pid=$(pgrep ffmpeg)
+if (exit $?) then
+	for x in $pid; do
+		kill -INT $x
+	done
+
+	for x in $pid; do
+		tail --pid=$x -f /dev/null
+	done
+else
+    nohup ffmpeg -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -ac 2 -framerate 60 -vaapi_device /dev/dri/renderD128 -f x11grab -video_size 1920x1080 -i :0.0+$(~/code/fadd/main.py | awk -F+ '{print $2"+"$3}') -vf 'hwupload,scale_vaapi=format=nv12' -c:v h264_vaapi -qp 24 ~/videos/records/rec-$(date +"%m.%d.%y-%H:%M:%S").mp4 &
+	sleep 0.3; rm -rf nohup.out
+fi
+
+polybar-msg action "#rec.exec"

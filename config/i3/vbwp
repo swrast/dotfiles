@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# vbp - video mode, background image, polybar
+# cuz i3 starts exec's everything at the same time so feh can be ran before xrandr
+
+xrandr --output HDMI-1 --auto --left-of eDP-1
+~/.fehbg
+xsetwacom set 'Wacom One by Wacom S Pen stylus' MapToOutput eDP-1 
+
+polybar abagofmilk
