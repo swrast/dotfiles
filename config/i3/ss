@@ -4,7 +4,7 @@ fetcher="$HOME/code/fadd/main.py"
 
 case "$1" in
     "area")
-        fetcher="slop -c 0.3,0.4,0.6,0.6 -b 2 -l"
+        fetcher="slop -c 0.3,0.4,0.6,0.6 -l"
     ;;
     "screen")
         fetcher="echo $(xdpyinfo | awk '/dimensions:/ { print $2; exit }')+0+0"
@@ -13,5 +13,5 @@ esac
 
 filename=$(date +"$HOME/pictures/screenshots/%Y-%m-%d_%H:%M:%S.png")
 
-maim -g "$($fetcher)" "$filename"
+maim -u -g "$($fetcher)" "$filename"
 xclip -selection clipboard -t image/png -i "$filename"

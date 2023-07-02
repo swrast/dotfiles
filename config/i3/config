@@ -1,6 +1,7 @@
 set $locker ~/.config/i3/lock
 set $mod Mod4
-set $term pgrep alacritty >/dev/null && alacritty msg create-window || alacritty
+set $term kitty -1
+# set $term pgrep alacritty >/dev/null && alacritty msg create-window || alacritty
 set $menu rofi -show drun
 set $rec ~/.config/i3/rec
 set $vbwp ~/.config/i3/vbwp
@@ -15,6 +16,7 @@ exec --no-startup-id $vbwp
 
 exec --no-startup-id xset b off
 exec --no-startup-id xset s off -dpms
+exec --no-startup-id xsetwacom set 'Wacom One by Wacom S Pen stylus' MapToOutput eDP-1
 # exec --no-startup-id setxkbmap -option "grp:win_space_toggle" -layout "us,ru"
 exec --no-startup-id picom
 exec --no-startup-id xss-lock $locker

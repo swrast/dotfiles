@@ -26,6 +26,7 @@ set.backspace = "start,eol,indent"
 set.path:append { "**" }
 set.wildignore:append { "*/node_modules/*" }
 set.formatoptions:append { "r" }
+set.clipboard = "unnamedplus"
 
 vim.api.nvim_create_autocmd("InsertLeave", {
     pattern = "*",
@@ -34,4 +35,13 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 vim.cmd [[let &t_Cs = "\e[4:3m"]]
 vim.cmd [[let &t_Ce = "\e[4:0m"]]
+vim.cmd [[
+    nnoremap x "_x
+    nnoremap d "_d
+    nnoremap D "_D
+    vnoremap d "_d
 
+    nnoremap <leader>d ""d
+    nnoremap <leader>D ""D
+    vnoremap <leader>d ""d
+]]
